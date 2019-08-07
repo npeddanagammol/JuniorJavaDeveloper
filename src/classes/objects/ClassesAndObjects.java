@@ -11,7 +11,7 @@ class Person{
 	public void routine() {
 		System.out.println(
 				
-				name +" wake up by 5 and get ready live the best. "
+				name +" wake up by 4 and get ready live the best. "
 				);
 		workout();
 		pooja();

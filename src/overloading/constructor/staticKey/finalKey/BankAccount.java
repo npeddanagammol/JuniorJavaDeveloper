@@ -52,13 +52,13 @@ public class BankAccount {
 	public void deposit(double amount) {
 		
 		balance = balance + amount;
-		showActivity("DEPOSIT",amount);
+		showActivity("DEPOSIT",amount,"NARENDRA");
 
 	}
 
 	void withdraw(double amount) {
 		balance = balance - amount;
-		showActivity("WITHDRAW",amount);
+		showActivity("WITHDRAW",amount,"NARENDRA");
 	}
 
 	void checkBalance() {
@@ -77,8 +77,8 @@ public class BankAccount {
 				+ ssn;
 	}
 	
-	private void showActivity(String activity, double amount) {
-		System.out.println("YOUR RECENT TRANSACTION IS : "+activity+" OF AMOUNT $"+amount);
+	private void showActivity(String activity, double amount,String name) {
+		System.out.println("MR."+name+" YOUR RECENT TRANSACTION IS : "+activity+" OF AMOUNT $"+amount);
 		System.out.println("YOUR NEW BALANCE IS : $"+ balance);
 	}
 
