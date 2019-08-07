@@ -4,22 +4,36 @@ import java.util.Scanner;
 
 public class PaymentApp {
 
-	public static void main(String[] args) {
+	static boolean positivePayment = true;
+
+	public static void main(String[] args) throws NegativePaymentExceptionHandler {
 
 		Scanner in = new Scanner(System.in);
-		System.out.println("Enter the payment amount");
-		double payment = in.nextInt();
-		try {
-			if (payment < 0) {
+		int count;
 
-				throw new NegativePaymentExceptionHandler(payment);
+		do {
 
-			} else
-				System.out.println("PAYMENT SUCCESSFUL");
-		} catch (NegativePaymentExceptionHandler e) {
-			System.out.println(e.toString());
-		}
-		
+			System.out.print("Enter the payment amount : ");
+			double payment = in.nextInt();
+
+			try {
+				if (payment < 0) {
+					throw new NegativePaymentExceptionHandler(payment);
+				}
+
+				else {
+					System.out.println("PAYMENT SUCCESSFUL. THANK YOU");
+					positivePayment = true;
+				}
+
+			} catch (NegativePaymentExceptionHandler e) {
+				System.out.println(e.toString());
+				System.out.println("PLEASE TRY AGAIN!!!");
+				positivePayment = false;
+
+			}
+
+		} while (!positivePayment);
+
 	}
-
 }
